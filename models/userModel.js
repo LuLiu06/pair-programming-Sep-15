@@ -1,3 +1,54 @@
+const mongoose = require("mongoose");  
+// 引入 mongoose，用来操作 MongoDB 数据库
+
+const Schema = mongoose.Schema;  
+// 从 mongoose 中获取 Schema，用来定义数据模型结构
+
+// 定义用户数据表结构（Schema）
+const userSchema = new Schema(
+  {
+    name: {
+      type: String,      // 用户姓名，字符串类型
+      required: true,    // 必填
+    },
+    email: {
+      type: String,      // 用户邮箱
+      required: true,    // 必填
+      unique: true,      // 唯一，不允许重复（防止多个用户用同一个邮箱注册）
+    },
+    password: {
+      type: String,      // 用户密码（一般存储加密后的字符串）
+      required: true,    // 必填
+    },
+    phone_number: {
+      type: String,      // 用户手机号
+      required: true,    // 必填
+    },
+    gender: {
+      type: String,      // 用户性别（可以是 "male" / "female" / "other"）
+      required: true,    // 必填
+    },
+    date_of_birth: {
+      type: Date,        // 用户生日，存储为日期类型
+      required: true,    // 必填
+    },
+    membership_status: {
+      type: String,      // 会员状态（例如 "active" / "inactive" / "vip"）
+      required: true,    // 必填
+    },
+  },
+  { timestamps: true }   
+  // 自动生成两个时间字段：
+  // createdAt —— 文档创建时间
+  // updatedAt —— 文档最后更新时间
+);
+
+// 导出模型，名字叫 "User"
+// MongoDB 里会自动对应为 "users" 集合
+module.exports = mongoose.model("User", userSchema);
+
+
+
 /* {
   "name": "Matti Seppänen",
   "email": "matti@example.com",
@@ -6,7 +57,7 @@
   "gender": "Male",
   "date_of_birth": "2000-01-15",
   "membership_status": "Active"
-} */
+} 
  
 let userArray = [];
 
@@ -154,3 +205,4 @@ const User = {
 };
 
 module.exports = User;
+*/
