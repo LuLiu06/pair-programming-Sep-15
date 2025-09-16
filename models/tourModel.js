@@ -1,3 +1,37 @@
+const mongoose = require("mongoose"); 
+// 引入 mongoose，用于操作 MongoDB 数据库
+
+const Schema = mongoose.Schema; 
+// 从 mongoose 中获取 Schema 构造器，用来定义数据模型结构
+
+// 定义旅游数据的 Schema（数据表结构）
+const tourSchema = new Schema(
+  {
+    name: {
+      type: String,     // 数据类型：字符串
+      required: true,   // 必填字段
+    },
+    info: {
+      type: String,     // 数据类型：字符串（旅游信息/描述）
+      required: true,   // 必填字段
+    },
+    image: {
+      type: String,     // 数据类型：字符串（存放图片 URL 地址）
+      required: true,   // 必填字段
+    },
+    price: {
+      type: String,     // 数据类型：字符串（价格，可以改成 Number 更合理）
+      required: true,   // 必填字段
+    },
+  },
+  { timestamps: true }  
+  // 自动生成时间戳字段：createdAt 和 updatedAt
+);
+
+// 导出模型，名字叫 "Tour"，对应 MongoDB 数据库中的 "tours" 集合
+module.exports = mongoose.model("Tour", tourSchema);
+
+
 /*
 {
   "name": "London in 7 Days Tour",
@@ -5,7 +39,7 @@
   "image": "https://www.course-api.com/images/tours/tour-1.jpeg",
   "price": "2,195"
 }
-*/ 
+
  
 let tourArray = [];
 let nextId = 1;
@@ -131,3 +165,5 @@ const Tour = {
 };
 
 module.exports = Tour;
+
+*/ 

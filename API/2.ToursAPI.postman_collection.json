@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "672c055d-fdf0-40df-a505-dc2c83418070",
+		"name": "ToursAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47884325",
+		"_collection_link": "https://luo-s-team-2.postman.co/workspace/Team-Workspace~72bf9d32-fe44-447c-8f0f-c6419f3a1b20/collection/47884325-672c055d-fdf0-40df-a505-dc2c83418070?action=share&source=collection_link&creator=47884325"
+	},
+	"item": [
+		{
+			"name": "Get all tours",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/tours",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"tours"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a new tour",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Best of Paris in 7 Days Tour\",\r\n  \"info\": \"Paris is synonymous with the finest things that culture can offer...\",\r\n  \"image\": \"https://www.course-api.com/images/tours/tour-1.jpeg\",\r\n  \"price\": \"1,995\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/tours",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"tours"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get tour by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/tours/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"tours",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Updated data",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Updated Tour Name\",\r\n  \"info\": \"Updated tour information...\",\r\n  \"image\": \"https://www.course-api.com/images/tours/tour-2.jpeg\",\r\n  \"price\": \"2,095\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/tours/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"tours",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a tour",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/tours/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"tours",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
